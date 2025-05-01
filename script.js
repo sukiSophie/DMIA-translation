@@ -201,12 +201,13 @@ function getNextTerm() {
 }
 
 // 显示测试完成信息
+// 显示测试完成信息
 function showCompletionMessage() {
     termElement.textContent = '恭喜！您已完成所有测试';
     answerInput.style.display = 'none';
     checkButton.style.display = 'none';
     showAnswerButton.style.display = 'none';
-    nextButton.textContent = '开始新一轮';
+    nextButton.style.display = 'none'; // 隐藏原有的下一题按钮
     
     // 显示结果和选项
     resultElement.innerHTML = `
