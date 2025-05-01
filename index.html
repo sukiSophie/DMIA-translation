@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>离散数学词汇测试</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>离散数学词汇测试</h1>
+            <div class="tabs">
+                <button id="vocab-tab" class="active">词汇测试</button>
+                <button id="theorem-tab">定理测试</button>
+            </div>
+        </header>
+        
+        <main>
+            <div class="quiz-container">
+                <div class="score-display">
+                    <span>得分: <span id="score">0</span></span>
+                    <span>总题数: <span id="total">0</span></span>
+                </div>
+                
+                <div class="question-container">
+                    <h2 id="term">加载中...</h2>
+                    <input type="text" id="answer" placeholder="请输入中文翻译">
+                    <div class="button-group">
+                        <button id="check-btn">检查答案</button>
+                        <button id="show-answer-btn">查看答案</button>
+                    </div>
+                </div>
+                
+                <div class="result-container" id="result">
+                    <!-- 结果将在这里显示 -->
+                </div>
+                
+                <button id="next-btn">下一题</button>
+            </div>
+        </main>
+        
+        <footer>
+            <p>离散数学词汇测试 &copy; 2023</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
