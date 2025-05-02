@@ -1,15 +1,321 @@
 // 从Markdown文件中解析词汇和定理数据
 const vocabData = {
+    "proposition": "命题",
+    "propositional variable": "命题变量",
+    "truth value": "真值",
+    "negation of p": "p的否定",
+    "logical operators": "逻辑运算符",
+    "compound proposition": "复合命题",
+    "truth table": "真值表",
+    "disjunction of p and q": "p和q的析取",
+    "conjunction of p and q": "p和q的合取",
+    "exclusive or of p and q": "p和q的异或",
+    "p implies q": "p蕴含q",
+    "converse of p q": "p q的逆命题",
+    "contrapositive of p q": "p q的逆否命题",
+    "inverse of p q": "p q的反命题",
+    "bi-conditional": "双条件",
+    "bit": "比特",
+    "Boolean variable": "布尔变量",
+    "bit operation": "比特运算",
+    "bit string": "比特串",
+    "bitwise operations": "按位运算",
+    "logic gate": "逻辑门",
+    "logic circuit": "逻辑电路",
+    "tautology": "永真式",
+    "contradiction": "矛盾式",
+    "contingency": "可能式",
+    "consistent compound propositions": "相容的复合命题",
+    "satisfiable compound proposition": "可满足的复合命题",
+    "logically equivalent compound propositions": "逻辑等价的复合命题",
+    "predicate": "谓词",
+    "propositional function": "命题函数",
+    "domain (or universe) of discourse": "论域",
+    "existential quantification of P(x)": "P(x)的存在量化",
+    "universal quantification of P(x)": "P(x)的全称量化",
+    "logically equivalent expressions": "逻辑等价表达式",
+    "free variable": "自由变量",
+    "bound variable": "约束变量",
+    "scope of a quantifier": "量词的作用域",
+    "argument": "论证",
+    "argument form": "论证形式",
+    "premise": "前提",
+    "conclusion": "结论",
+    "valid argument": "有效论证",
+    "theorem": "定理",
+    "conjecture": "猜想",
+    "proof": "证明",
+    "axiom": "公理",
+    "lemma": "引理",
+    "corollary": "推论",
+    "direct proof": "直接证明法",
+    "proof by contraposition": "反证法",
+    "proof by contradiction": "归谬证明法",
+    "proof by cases": "分情形证明法",
+    "without loss of generality": "不失一般性",
+    "counterexample": "反例",
+    "rational number": "有理数",
+    "uniqueness proof": "唯一性证明",
     "homogeneous": "齐次的",
     "coefficient": "系数",
     "recurrence": "递推",
     "injection(one-to-one)": "单射",
     "surjection(onto)": "满射",
-    "bijection(one-to-one correspondence)": "双射"
+    "bijection(one-to-one correspondence)": "双射",
+    "set": "集合",
+    "paradox": "悖论",
+    "element, member of a set": "集合的元素、成员",
+    "roster method": "花名册方法",
+    "set builder notation": "集合构造器记号",
+    "empty set, null set": "空集",
+    "universal set": "全集",
+    "Venn diagram": "文氏图",
+    "set equality": "集合相等",
+    "subset": "子集",
+    "proper subset": "真子集",
+    "finite set": "有限集",
+    "infinite set": "无限集",
+    "cardinality of S": "S的基数",
+    "power set of S": "S的幂集",
+    "union of A and B": "A和B的并集",
+    "intersection of A and B": "A和B的交集",
+    "difference of A and B": "A和B的差集",
+    "complement of A": "A的补集",
+    "symmetric difference of A and B": "A和B的对称差",
+    "membership table": "元素表",
+    "function from A to B": "从A到B的函数",
+    "domain of f": "f的定义域",
+    "codomain of f": "f的值域",
+    "image of a under f": "a在f下的像",
+    "pre-image of b under f": "b在f下的原像",
+    "range of f": "f的值域",
+    "onto function, surjection": "映上函数、满射",
+    "one-to-one function, injection": "一对一函数、内射",
+    "one-to-one correspondence, bijection": "一一对应、双射",
+    "inverse of f": "f的逆",
+    "composition of f and g": "f和g的组合",
+    "floor function": "下取整函数",
+    "ceiling function": "上取整函数",
+    "sequence": "序列",
+    "geometric progression": "几何级数",
+    "arithmetic progression": "算术级数",
+    "string": "字符串",
+    "empty string": "空串",
+    "recurrence relation": "递推关系",
+    "summation": "求和",
+    "product": "乘积",
+    "cardinality": "基数",
+    "countable set": "可数集",
+    "uncountable set": "不可数集",
+    "aleph null": "阿列夫零",
+    "computable function": "可计算函数",
+    "uncomputable function": "不可计算函数",
+    "matrix": "矩阵",
+    "matrix addition": "矩阵加法",
+    "matrix multiplication": "矩阵乘法",
+    "identity matrix of order n": "n阶单位矩阵",
+    "transpose of A": "A的转置",
+    "symmetric matrix": "对称矩阵",
+    "zero-one matrix": "0-1矩阵",
+    "union of A and B": "A和B的并",
+    "intersection of A and B": "A和B的交",
+    "Boolean product of A and B": "A和B的布尔积",
+    "algorithm": "算法",
+    "searching algorithm": "搜索算法",
+    "linear search algorithm": "线性搜索算法",
+    "binary search algorithm": "二分搜索算法",
+    "sorting": "排序",
+    "string searching": "字符串搜索",
+    "f(x) is O(g(x))": "f(x) 是 O(g(x)) 的",
+    "f(x) is Ω(g(x))": "f(x) 是 Ω(g(x)) 的",
+    "f(x) is Θ(g(x))": "f(x) 是 Θ(g(x)) 的",
+    "time complexity": "时间复杂度",
+    "space complexity": "空间复杂度",
+    "worst-case time complexity": "最坏情形时间复杂度",
+    "average-case time complexity": "平均情形时间复杂度",
+    "algorithmic paradigm": "算法范型",
+    "brute force": "蛮力算法",
+    "greedy algorithm": "贪婪算法",
+    "tractable problem": "易解问题",
+    "intractable problem": "难解问题",
+    "solvable problem": "可解问题",
+    "unsolvable problem": "不可解问题",
+    "upper triangular matrix": "上三角矩阵",
+    "divides": "整除",
+    "congruent modulo m": "模m同余",
+    "modular arithmetic": "模算术",
+    "prime": "素数",
+    "composite": "合数",
+    "Mersenne prime": "梅森素数",
+    "greatest common divisor (gcd)": "最大公约数",
+    "relatively prime integers": "互素整数",
+    "pairwise relatively prime integers": "两两互素的整数",
+    "least common multiple (lcm)": "最小公倍数",
+    "modulus": "模",
+    "binary representation": "二进制表示",
+    "octal representation": "八进制表示",
+    "hexadecimal representation": "十六进制表示",
+    "linear combination": "线性组合",
+    "Bezout coefficients": "贝祖系数",
+    "inverse modulo m": "模逆",
+    "linear congruence": "线性同余方程",
+    "pseudoprime to the base b": "以b为基数的伪素数",
+    "Carmichael number": "卡迈切尔数",
+    "primitive root": "原根",
+    "discrete logarithm": "离散对数",
+    "encryption": "加密",
+    "decryption": "解密",
+    "encryption key": "加密密钥",
+    "shift cipher": "移位密码",
+    "affine cipher": "仿射密码",
+    "character cipher": "字符密码",
+    "block cipher": "分组密码",
+    "cryptanalysis": "密码分析",
+    "cryptosystem": "密码系统",
+    "private key encryption": "私钥加密",
+    "public key encryption": "公钥加密",
+    "RSA cryptosystem": "RSA密码系统",
+    "key exchange protocol": "密钥交换协议",
+    "digital signature": "数字签名",
+    "fully homomorphic cryptosystem": "全同态密码系统",
+    "basis step": "基础步骤",
+    "inductive step": "归纳步骤",
+    "strong induction": "强归纳法",
+    "well-ordering property": "良序性",
+    "recursive definition of a function": "函数的递归定义",
+    "recursive definition of a set": "集合的递归定义",
+    "structural induction": "结构归纳法",
+    "recursive algorithm": "递归算法",
+    "merge sort": "归并排序",
+    "iteration": "迭代",
+    "program correctness": "程序正确性",
+    "loop invariant": "循环不变量",
+    "initial assertion": "初始断言",
+    "final assertion": "终结断言",
+    "combinatorics": "组合数学",
+    "enumeration": "枚举",
+    "tree diagram": "树图",
+    "permutation": "排列",
+    "r-permutation": "r排列",
+    "P(n, r)": "n元素集合的r排列数",
+    "r-combination": "r组合",
+    "C(n, r)": "n元素集合的r组合数",
+    "binomial coefficient": "二项式系数",
+    "combinatorial proof": "组合证明",
+    "Pascal's triangle": "帕斯卡三角形",
+    "product rule for counting": "计数的乘积法则",
+    "product rule for sets": "集合的乘积法则",
+    "sum rule for counting": "计数的求和法则",
+    "sum rule for sets": "集合的求和法则",
+    "division rule for counting": "计数的除法法则",
+    "division rule for sets": "集合的除法法则",
+    "pigeonhole principle": "鸽巢原理",
+    "generalized pigeonhole principle": "广义鸽巢原理",
+    "Pascal's identity": "帕斯卡恒等式",
+    "sample space": "样本空间",
+    "event": "事件",
+    "probability of an event (Laplace's definition)": "事件的概率（拉普拉斯定义）",
+    "probability distribution": "概率分布",
+    "probability of an event E": "事件E的概率",
+    "conditional probability of E given F": "给定条件F下E的条件概率",
+    "independent events": "独立事件",
+    "pairwise independent events": "两两独立事件",
+    "mutually independent events": "相互独立事件",
+    "random variable": "随机变量",
+    "distribution of a random variable X": "随机变量X的分布",
+    "uniform distribution": "均匀分布",
+    "expected value of a random variable": "随机变量的期望值",
+    "geometric distribution": "几何分布",
+    "independent random variables": "独立随机变量",
+    "variance of a random variable X": "随机变量的方差",
+    "standard deviation of a random variable X": "随机变量的标准差",
+    "Bernoulli trial": "伯努利试验",
+    "probabilistic (or Monte Carlo) algorithm": "概率（蒙特卡罗）算法",
+    "probabilistic method": "概率方法",
+    "linearity of expectations": "期望的线性性质",
+    "Bienaymé's formula": "比安内梅公式",
+    "initial conditions for a recurrence relation": "递推关系的初始条件",
+    "dynamic programming": "动态规划",
+    "linear homogeneous recurrence relation with constant coefficients": "常系数线性齐次递推关系",
+    "characteristic roots of a linear homogeneous recurrence relation with constant coefficients": "常系数线性齐次递推关系的特征根",
+    "linear nonhomogeneous recurrence relation with constant coefficients": "常系数线性非齐次递推关系",
+    "divide and conquer algorithm": "分治算法",
+    "generating function of a sequence": "序列的生成函数",
+    "derangement": "错位排列",
+    "onto functions": "映上函数",
+    "number of derangements": "错位排列数",
+    "binary relation from A to B": "从A到B的二元关系",
+    "relation on A": "定义在A上的关系",
+    "composition of relations": "关系的合成",
+    "inverse relation": "逆关系",
+    "power of a relation": "关系的幂",
+    "reflexive": "自反的",
+    "symmetric": "对称的",
+    "antisymmetric": "反对称的",
+    "transitive": "传递的",
+    "n-ary relation on A1, A2, …, An": "定义在A1, A2, …, An上的n元关系",
+    "relational data model": "关系数据模型",
+    "primary key": "主键",
+    "composite key": "复合主键",
+    "selection operator": "选择运算符",
+    "projection": "投影",
+    "join": "连接",
+    "directed graph (digraph)": "有向图",
+    "loop": "环",
+    "closure of a relation with respect to a property": "关系关于性质的闭包",
+    "path in a digraph": "有向图中的路径",
+    "circuit (or cycle) in a digraph": "有向图中的回路（或圈）",
+    "connectivity relation": "连通性关系",
+    "equivalence relation": "等价关系",
+    "equivalent": "等价",
+    "equivalence class of a with respect to R": "a关于R的等价类",
+    "congruence class modulo m": "模m的同余类",
+    "partition of a set S": "集合S的划分",
+    "partial ordering": "偏序",
+    "poset (S, R)": "偏序集",
+    "comparable": "可比的",
+    "incomparable": "不可比的",
+    "total (or linear) ordering": "全序（或线序）",
+    "totally (or linearly) ordered set": "全序（或线序）集",
+    "well-ordered set": "良序集",
+    "lexicographic order": "字典顺序",
+    "Hasse diagram": "哈塞图",
+    "maximal element": "极大元",
+    "minimal element": "极小元",
+    "greatest element": "最大元",
+    "least element": "最小元",
+    "upper bound of a set": "集合的上界",
+    "lower bound of a set": "集合的下界",
+    "least upper bound of a set": "集合的最小上界",
+    "greatest lower bound of a set": "集合的最大下界",
+    "lattice": "格",
+    "compatible total ordering for a partial ordering": "与一个偏序相容的全序",
+    "topological sort": "拓扑排序"
 };
 
 const theoremData = {
-    "the principle of inclusion- exclusion": "容斥原理"
+    "the principle of inclusion- exclusion": "容斥原理",
+    "rule of inference": "推理规则",
+    "valid argument form": "有效论证形式",
+    "fallacy": "谬误",
+    "vacuous proof": "空证明",
+    "trivial proof": "平凡证明",
+    "exhaustive proof": "穷举证明法",
+    "constructive existence proof": "构造性的存在性证明",
+    "nonconstructive existence proof": "非构造性的存在性证明",
+    "circular reasoning or begging the question": "循环论证或窃取论题",
+    "continuum hypothesis": "连续统假设",
+    "division algorithm": "整除算法",
+    "Euclidean algorithm": "欧几里得算法",
+    "Bezout's theorem": "贝祖定理",
+    "sieve of Eratosthenes": "埃拉托斯特尼筛法",
+    "fundamental theorem of arithmetic": "算术基本定理",
+    "principle of mathematical induction": "数学归纳法原理",
+    "binomial theorem": "二项式定理",
+    "subtraction rule for counting or inclusion-exclusion for sets": "计数的减法法则或集合的容斥原理",
+    "Bayes' theorem": "贝叶斯定理",
+    "Chebyshev's inequality": "切比雪夫不等式",
+    "inclusion-exclusion principle": "容斥原理"
 };
 
 // 全局变量
@@ -180,6 +486,8 @@ function getNextTerm() {
             if (incorrectSet.has(currentRemaining[i])) {
                 const term = currentRemaining[i];
                 incorrectSet.delete(term);
+                // 从剩余列表中移除该词汇/定理
+                currentRemaining.splice(i, 1);
                 return term;
             }
         }
@@ -191,16 +499,20 @@ function getNextTerm() {
             if (viewedSet.has(currentRemaining[i])) {
                 const term = currentRemaining[i];
                 viewedSet.delete(term);
+                // 从剩余列表中移除该词汇/定理
+                currentRemaining.splice(i, 1);
                 return term;
             }
         }
     }
     
     // 最后从剩余词汇/定理中选择第一个
-    return currentRemaining[0];
+    const term = currentRemaining[0];
+    // 从剩余列表中移除该词汇/定理
+    currentRemaining.splice(0, 1);
+    return term;
 }
 
-// 显示测试完成信息
 // 显示测试完成信息
 function showCompletionMessage() {
     termElement.textContent = '恭喜！您已完成所有测试';
@@ -225,23 +537,40 @@ function showCompletionMessage() {
     // 设置按钮事件
     document.getElementById('new-round-btn').addEventListener('click', () => {
         resetTest();
-        nextQuestion();
+        nextQuestion(); // 确保重置后立即加载新问题
     });
     
     document.getElementById('exit-btn').addEventListener('click', () => {
-        // 显示退出信息
-        termElement.textContent = '感谢使用！';
-        resultElement.innerHTML = '<p>您已退出测试。刷新页面可重新开始。</p>';
-        nextButton.style.display = 'none';
+        // 退出测试，可以根据需要实现
+        alert('感谢您的参与！');
     });
 }
 
-// 恢复UI
+// 恢复UI元素的显示状态
 function restoreUI() {
+    // 恢复输入框和按钮的显示
     answerInput.style.display = 'block';
+    answerInput.value = '';
     checkButton.style.display = 'inline-block';
+    nextButton.style.display = 'block';
     showAnswerButton.style.display = 'inline-block';
-    nextButton.textContent = '下一题';
+    
+    // 清空结果显示
+    resultElement.innerHTML = '';
+    resultElement.style.display = 'none';
+    resultElement.classList.remove('correct', 'incorrect', 'completion');
+    
+    // 重置答案检查状态
+    answerChecked = false;
+    
+    // 确保完成界面的按钮被移除
+    const completionButtons = document.querySelectorAll('.completion-options button');
+    completionButtons.forEach(button => {
+        if (button) button.remove();
+    });
+    
+    // 重置题目显示
+    termElement.textContent = '加载中...';
 }
 
 // 加载下一个问题
@@ -258,17 +587,27 @@ function nextQuestion() {
     answerInput.value = '';
     answerInput.focus();
     
-    // 获取新词汇/定理
+    // 获取下一个测试词汇/定理
     currentTerm = getNextTerm();
     
-    if (currentTerm) {
-        termElement.textContent = currentTerm;
-    } else if (remainingTerms[currentMode].length > 0) {
-        // 如果还有未测试的词汇/定理，但没有获取到新题目（可能是因为暂时没有可用的题目）
-        termElement.textContent = '暂时没有新题目，请稍后再试';
-        setTimeout(nextQuestion, 2000); // 2秒后自动尝试获取新题目
+    // 如果没有新题目，显示提示信息并在2秒后自动尝试获取新题目
+    if (!currentTerm) {
+        termElement.textContent = '暂时没有新题目，请稍等...';
+        setTimeout(nextQuestion, 2000);
+        return;
     }
-    // 如果所有词汇/定理都已测试完毕，showCompletionMessage 已经处理了 UI
+    
+    // 显示词汇/定理
+    termElement.textContent = currentTerm;
+    
+    // 更新已测试的词汇/定理集合
+    const correctSet = correctTerms[currentMode];
+    if (correctSet.has(currentTerm)) {
+        // 如果已经答对过，显示提示
+        resultElement.textContent = '您之前已经答对过这个题目';
+        resultElement.classList.add('neutral');
+        resultElement.style.display = 'block';
+    }
 }
 
 // 检查答案是否模糊匹配
